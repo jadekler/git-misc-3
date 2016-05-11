@@ -9,7 +9,7 @@ func main() {
     fmt.Println("hello world")
     fmt.Println(elasticsearch.ShardCount())
 
-    elasticsearch.PutEmployee("jack", "frost")
+    elasticsearch.PutEmployee(9, "jack", "frost")
 
     fmt.Println(elasticsearch.EmployeeCount())
 }

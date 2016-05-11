@@ -6,7 +6,7 @@ import (
     "fmt"
 )
 
-func PutEmployee(firstName, surname string) {
+func PutEmployee(id int, firstName, surname string) {
     requestBody := fmt.Sprintf(`
     {
         "first_name": "%s",
@@ -17,5 +17,6 @@ func PutEmployee(firstName, surname string) {
     }
     `, firstName, surname)
     data := strings.NewReader(requestBody)
-    http.Post("http://localhost:9200/megacorp/employee/5", "json", data)
+    url := fmt.Sprintf("http://localhost:9200/megacorp/employee/%d", id)
+    http.Post(url, "json", data)
 }
