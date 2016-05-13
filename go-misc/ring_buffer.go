@@ -11,6 +11,7 @@ func main() {
     buffer.queueWord("world")
     buffer.queueWord("this")
     buffer.queueWord("is")
+    buffer.queueWord("jean")
 
     buffer.print()
 }
