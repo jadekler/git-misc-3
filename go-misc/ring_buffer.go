@@ -18,14 +18,12 @@ func main() {
 type ringBuffer struct {
     buffer         []string
     currentPointer int
-    maxSize        int
 }
 
 func newRingBuffer(size int) ringBuffer {
     return ringBuffer{
         buffer: make([]string, size),
         currentPointer: 0,
-        maxSize: size,
     }
 }
 
@@ -42,7 +40,7 @@ func (buffer ringBuffer) print() {
 func (buffer *ringBuffer) queueWord(word string) {
     buffer.buffer[buffer.currentPointer] = word
 
-    if buffer.currentPointer + 1 == buffer.maxSize {
+    if buffer.currentPointer + 1 == len(buffer.buffer) {
         buffer.currentPointer = 0
     } else {
         buffer.currentPointer++
