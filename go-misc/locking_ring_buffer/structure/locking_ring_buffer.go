@@ -25,11 +25,9 @@ func (buffer ringBuffer) Print() {
 }
 
 func (buffer *ringBuffer) Insert(word string) {
-    buffer.buffer[buffer.currentPointer] = word
 
-    if buffer.currentPointer + 1 == len(buffer.buffer) {
-        buffer.currentPointer = 0
-    } else {
-        buffer.currentPointer++
-    }
+}
+
+func (buffer *ringBuffer) Read() string {
+    return "??"
 }
